@@ -15,3 +15,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Strona logowania</title>
+  <style>
+    /* Dodaj stylizację formularza, jak w poprzednim przykładzie */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Logowanie</h2>
+    <form method="POST" action="login.php">
+      <label for="login">Login:</label>
+      <input type="text" id="login" name="login" placeholder="Wprowadź login" required>
+
+      <label for="password">Hasło:</label>
+      <input type="password" id="password" name="password" placeholder="Wprowadź hasło" required>
+
+      <input type="submit" value="Zaloguj">
+      <?php if(isset($error_message)) { echo '<p style="color: red;">'.$error_message.'</p>'; } ?>
+    </form>
+  </div>
+</body>
+</html>
